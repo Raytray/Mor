@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\begin{document}
+\begin{singlespace}
+\noindent Raymond Tang\\
+rt2ck\\
+Richard Li\\
+yl4tc\\
+\\
+CS 4753 ECommerce Website\\
+\end{singlespace}
+
+\begin{doublespace}
+\subsection*{Motivation}
+Our main motivation for this website when we realized that many students had the question of \emph{`What could I possible minor or double major in easily?'}
+An additional function is to allow students to schedule their semesters with whatever majors and minors the student chooses.
+This may be useful since SIS does not provide the function for students to plan their schedule in advance, especially to easily test multiple majors/minors and combinations of them.
+Currently, most students simple plan things out by hand on paper.
+
+\subsection*{Description}
+The website has 5 pages. The main page is simply a news page and portal. There is a login page designed to allow users to customize their own courses and display possible course tracks that would lead to other majors. However this feature is not implemented at this time. The select page under \emph{Start Planning} is the primary functionality of the site currently. By selecting a course via the dropdown box, similar courses will appear in below. The about page displays the website's authors and a short description of them. The other links page displays other pages associated with the University of Virginia and Course planning.
+
+\subsection*{Javascript Details}
+The slideImg.js contains the image slideshow which is displayed on the bottom of most pages. It shows miserable students that are stressed about their course planning. In slideImg.js we utilized functions as well as different variables to create the effect.
+The login.js contains the form validation as well as a popup box.
+The select.js contains several functions. The clearTable function utilizes a for loop to clear the mutable rows of the table. While the add row function utilizes if statement to checks the dropdown box's information and which option was selected. We felt that by mutating the rows of the table in the manner we did, we did not need to implement the document.write component as this was essentially done by appending a textnode into the table.
+
+\subsection*{CSS Details}
+The basis of the style sheet was from a Creative Commons CSS file from http://www.freecsstemplates.org/.
+The navigation dropdown menu was done entirely in CSS, as is all the formatting for the header, main and side colums, and lists.
+All the style code is in a seperate style called style.css.
+
+\subsection*{Roadmap}
+In the future the site will allow logins. This will be done when we complete the backend with the database including users, emails, all majors and a schedule tracker. All links would work, and possibly have courses link to available sections listed on \emph{Lous' List} or \emph{theCourseForum}.\\
+Also generate default schedules based off of possible sections and combination of majors and minors, taking into account popular choices.\\
+The site in general will also under go a few aesthetic changes such as the removal of the slideshow or using the space for more informative slideshow, perhaps of possible schedules.
+
+\subsection*{Validation errors}
+Encoding error: \emph{The encoding ascii is not the preferred name of the character encoding in use. The preferred name is us-ascii. (charmod C024)}\\
+We declared it as us-ascii, however the warning states that it's reading it and prefers ascii instead. Unsure how to go about this.
+
+\end{doublespace}
+\end{document}
