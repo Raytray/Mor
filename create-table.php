@@ -1,6 +1,6 @@
 <?php
 //Connect to MySQL
-mysql_connect('host', 'database', 'password') or die (mysql_error());
+mysql_connect('localhost', 'root', 'hollow') or die (mysql_error());
 //Select database
 mysql_select_db('database') or die (mysql_error());
 //Create the table
