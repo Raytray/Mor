@@ -29,6 +29,7 @@ if(mysql_num_rows(mysql_query("SELECT * from users WHERE email='" . $_POST['emai
         }
 }
 else{
+    header("location:login.php");
     echo 'Error. Please contact your local Richard Li or Raymond Tang';
 }
 ?>
