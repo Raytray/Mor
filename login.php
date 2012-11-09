@@ -7,7 +7,7 @@ mysql_select_db('a6519930_base')
 $email=$_POST['email'];
 $password=$_POST['password'];
 if(mysql_num_rows(mysql_query("SELECT * from users WHERE email='" . $_POST['email'] . "'")) == 1){
-    $salt = 'raymond'; //mysql_query("SELECT salt FROM users WHERE email='$myemail' LIMIT 1");
+    $salt = mysql_query("SELECT salt FROM users WHERE email='$myemail' LIMIT 1");
     $email = stripslashes($email);
     $password = stripslashes($password);
     $email=mysql_real_escape_string($email);
