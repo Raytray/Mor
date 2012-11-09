@@ -22,13 +22,16 @@ if(mysql_num_rows(mysql_query("SELECT * from users WHERE email='" . $_POST['emai
             $_SESSION['loggedIn']=true;
 
 	    header("location:login.php");
-        }
+	    }   
         else{
             echo 'Wrong email or password!';
-        }
+	    }
+
+	    }
 }
 else{
     header("location:login.php");
     echo 'Error. Please contact your local Richard Li or Raymond Tang';
 }
+
 ?>
