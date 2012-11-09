@@ -33,9 +33,10 @@
             </ul>
             <div id="page"> 
                 <div id="content" class="post">
-                    <h2 class="Title">Login</h2>
+                    <h2 class="Title">Account</h2>
                     <div align="center">
                         <?php
+                        session_start();
                         if($_SESSION['loggedIn']!=true){
                         ?>
                         <form action="signin.php" method="post"><br />
@@ -57,9 +58,18 @@
                         </form>
                         <?php
                         }
-                        else
-                        echo "<button type = 'button'>Log Out</button>";
-                        ?>
+                        else{ ?>
+                        <form action="logout.php" method="post"><br/>
+                          <input type="submit" value="Log Out" />
+                        </form>
+                        <form action="newPass.php" method="post"><br/>
+                          <input type="submit" value="Log Out" />
+                            Old: <input type="password" name="Old Password"/><br/>
+                            New: <input type="password" name="New Password"/><br/>
+                            Retype: <input type="password" name="retype-password"/><br />
+                        </form>
+                        
+                        <?php } ?>
                     </div>
                 </div>
 
