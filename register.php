@@ -1,6 +1,6 @@
 <?php
-mysql_connect('localhost', 'a6519930_user', 'ecommerce2012') or die (mysql_error());
-mysql_select_db('database') or die (mysql_error());
+mysql_connect('mysql6.000webhost.com', 'a6519930_user', 'ecommerce2012') or die (mysql_error());
+mysql_select_db('a6519930_base') or die (mysql_error());
 if(mysql_num_rows(mysql_query("SELECT * from users WHERE username='" . $_POST['username'] . "'")) == 1){
 echo "Sorry, this username is already taken!";
 }

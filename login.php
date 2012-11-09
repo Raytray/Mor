@@ -1,8 +1,8 @@
 <?php
 session_start();
-mysql_connect('localhost', 'a6519930_base', 'ecommerce2012')
+mysql_connect('mysql6.000webhost.com', 'a6519930_user', 'ecommerce2012')
     or die ("Could not connect to mysql because ".mysql_error());
-mysql_select_db('database')
+mysql_select_db('a6519930_base')
     or die("Could not select database because ".mysql_error());
 $username=$_POST['username'];
 $password=$_POST['password'];
