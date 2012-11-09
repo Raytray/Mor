@@ -20,7 +20,31 @@ CS 4753 ECommerce Website Assignment 2\\
 \indent Users are also able to save a specific major or minor that they have already declared in order to more quickly discover common minors in line with their majors. An interesting direction to take along this path is to enable users to save possibly majors and minors that they are interested in pursuing, and displaying the total minimum number of credits required to achieve both degrees.\\
 \\
 \subsection*{Functionalities}
-\indent We sought to first acheive functionality for the users that were able to access the site. This exclusivitiy may help grow the population of the site as well as deter users from the site. Users can log in, log out, register, change password, reset password, and declare a major.
+\indent We sought to first acheive functionality for the users that were able to access the site. This exclusivitiy may help grow the population of the site as well as deter users from the site. Users can log in, log out, register, change password, and declare a major. A function of the website is that the website will email them once they register with the site. In the future, we hope to expand upon this by creating a plan sharing tool which allows users to share currently viewed or saved plans through social media or email. \\
+\indent If they are an admin, they are also given the option to add courses and associate majors with the given course. This function will be expanded upon later by utilizing the implode and explode functions in php, that will allow us to separate comma separated values into an array. We will then be able to create interesting diagrams and charts illustrating common courses and the like.\\
+\\
+\indent In short, the functionalities implemented centered around the user are:
+\begin{enumerate}
+\item Login, Logout.\\
+\item Register Account.\\
+\item Delete Account.
+\item Change Password.\\
+\item Admins Add Courses.\\
+\item Declare Major. \emph{\#For use with the course functionality}\\
+\end{enumerate}
+
+\subsection*{Security}
+\indent Once the login system was created, we immediately created a hash and salting functions in order to secure our user's passwords. We also santized inputs in every available textbox that interacted with the mysql database in order to prevent any injection attacks. We also decided to utilize sessions as opposed to cookies as cookies may be disabled for privacy concerns, and sessions, while less powerful, will cover a larger user base.
+
+\subsection*{Method}
+\indent We were able to achieve all of this by utilizing the PHPmyAdmin tool provided by 000webhost, and the mysql service they provided for both our website and our testing. We also utilized several tutorials and documentation from php.net and some blogs to implement several of the features, including the login feature. However, we quickly adapted the design and altered the implementation in order to better suit our website.
+
+\subsection*{Roadmap}
+\indent From here, we plan to spend the next iteration of functionality towards courses, and generating similar majors and minors based on common courses already taken or in the declared major. This would require the current database to be expanded with fields for each course to also include when they are offered, what times, and dependies information. After this iteration, we then plan to merge the two ares of functionality together in order to provide a more cohesive site. Finally, the last focused round of iteration will be polishing up aesthics and ensuring the site is user friendly, and intuitive. As users that are not able to use the site, will not be a return user to the site if they cannot successfully accomplish their goal the first time around.
+
+\subsection*{Features}
+\indent Some interesting things with the code we did in this iteration of the website include migrating the website and all of it's services to a free webhost which allows us to focus on the php and mysql aspects of the product. We also utilized regexp and mailing services in order to better serve users. We also created dynamic pages that react to the logged in status of the user, and display their username and hide the login and log out buttons.
+
 
 \end{doublespace}
 \end{document}
