@@ -10,6 +10,8 @@ session_start();
                     else
                         echo 'guest';
                     echo '</a></h2></div>';
+					if($_SESSION['isAdmin'])
+					echo '<a href = "addPage.php"> add majors </a>';
                     ?>
 
 

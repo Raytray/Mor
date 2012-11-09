@@ -16,20 +16,20 @@
         <div id="wrapper">
             <div id="header">
                 <div id="logo">
-                    <h1><a href="index.html">mor <span style="font-size:16px;"> Discover related minors and plan your schedule!</span></a></h1>
+                    <h1><a href="index.php">mor <span style="font-size:16px;"> Discover related minors and plan your schedule!</span></a></h1>
                 </div>
             </div>
             <ul id="menu">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="#">Start Planning</a>
                 <ul>
-                    <li class="last"><a href="select.html">Discover</a></li>
+                    <li class="last"><a href="select.php">Discover</a></li>
                     <li class="last"><a href="#">Plan</a></li>
                 </ul>
                 </li>
-                <li><a href="links.html">Useful Links</a></li>
+                <li><a href="links.php">Useful Links</a></li>
                 <li class="current_page_item"><a href="login.php">Login</a></li>
-                <li class="last"><a href="about.html">About</a></li>
+                <li class="last"><a href="about.php">About</a></li>
             </ul>
             <div id="page"> 
                 <div id="content" class="post">
