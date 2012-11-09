@@ -61,13 +61,22 @@
                         else{ ?>
                         <form action="logout.php" method="post"><br/>
                           <input type="submit" value="Log Out" />
-                        </form>
+                        </form><br />
                         <form action="newPass.php" method="post"><br/>
+                            <b style="font-size:150%;">Change Password</b><br/>
                             Old: <input type="password" name="Old Password"/><br/>
                             New: <input type="password" name="New Password"/><br/>
                             Retype: <input type="password" name="retype-password"/><br />
                             <input type="submit" value="Change" />
                         </form>
+
+<br /> <br />
+                        <form action="delete.php" method="post"><br/>
+                            <b style="font-size:150%;">Delete Account</b><br/>
+                            Password: <input type="password" name="password" value="Are you sure?" /><br/>
+                            <input type="submit" value="Delete Account" />
+                        </form>
+
                         
                         <?php } ?>
                         <?php

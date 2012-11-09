@@ -7,6 +7,15 @@ $password=$_POST['password'];
 $retype=$_POST['retype']; 
 if($password!=$retype)
     $_SESSION['message'] = "passwords don't match. derp";
+else if(strlen($_POST['password']) > 25){
+    $_SESSION['message'] =  "Password is too long!";
+}
+else if(strlen($_POST['password']) < 6){
+    $_SESSION['message'] =  "Password is too short!";
+}
+else if(preg_match('/[^0-9A-Za-z]/',$_POST['password'])){
+    $_SESSION['message'] =  "Invalid characters in password!";
+}
 else{
     $salt = $_SESSION['name'];
     $old= stripslashes($old);
