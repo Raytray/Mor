@@ -68,6 +68,15 @@
                             Retype: <input type="password" name="retype-password"/><br />
                             <input type="submit" value="Change" />
                         </form>
+						<form action="declare.php" method="post"><br/>
+						Major: <select name="Major">
+						  <option value="default" selected="selected">Please select a major</option>
+						  <option value="BS Computer Science">B.S. Computer Science</option>
+						  <option value="BS Computer Engineering">Computer Engineering</option>
+						  <option value="BS Electrical Engineering">Electrical Engineering</option>
+						</select>
+                            <input type="submit" value="Declare" />
+                        </form>
                         
                         <?php } ?>
                         <?php
