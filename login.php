@@ -81,7 +81,7 @@
                     <br /> <br />
                         <form action="delete.php" method="post"><br/>
                             <b style="font-size:150%;">Delete Account</b><br/>
-                            Password: <input type="password" name="password" value="Are you sure?" /><br/>
+                            Password: <input type="password" name="password"  /><br/>
                             <input type="submit" value="Delete Account" />
                         </form>
 
