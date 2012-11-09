@@ -313,7 +313,7 @@ a:visited{
 
 #sidebar ul {
 	margin: 0;
-	padding: 0;
+    padding-top: 30px;
 	list-style: none;
 }
 #sidebar ol{
