@@ -70,7 +70,7 @@
                             <input type="submit" value="Change" />
                         </form>
 						<form action="declare.php" method="post"><br/>
-						Major: <select name="Major">
+						Major: <select name="major">
 						  <option value="default" selected="selected">Please select a major</option>
 						  <option value="BS Computer Science">B.S. Computer Science</option>
 						  <option value="BS Computer Engineering">Computer Engineering</option>
@@ -86,23 +86,18 @@
                         </form>
 
                         
-			   <br /><div color="#FF0000">
+<<<<<<< HEAD
+			   <br />
+=======
+>>>>>>> bce18596b42dde4f51cc2b337971d9bca0e9e9ff
                         <?php } ?>
                         <?php
                         session_start(); 
                         if(isset($_SESSION['message'])){
-<<<<<<< HEAD
-                            print_r($_SESSION['major'],1);
                             echo $_SESSION['message'];
-=======
-
-			     echo $_SESSION['message'];
-
->>>>>>> d548ce98dd680d9cacdb4d9d734bea3df74a55d6
                             unset($_SESSION['message']);
                         }
                         ?>
-			   </span>
                     </div>
                 </div>
 

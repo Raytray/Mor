@@ -5,12 +5,11 @@ mysql_select_db('a6519930_base') or die (mysql_error());
 if(mysql_num_rows(mysql_query("SELECT * from users WHERE email='" . $_SESSION['name'] . "'")) == 1){
 
 
+    $email=$_SESSION['name'];
     $password=$_POST['password'];
-    $email = stripslashes($email);
-    $password = stripslashes($password);
-    $email=mysql_real_escape_string($email);
     $password=mysql_real_escape_string($password);
     $password=crypt($password,$email);//hash the password
+
     if(mysql_num_rows(mysql_query("Select * FROM users WHERE email='$email' and password='$password'"))==1){
         mysql_query("DELETE FROM users WHERE email='" . $_SESSION['name'] . "'");
 
