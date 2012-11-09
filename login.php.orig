@@ -91,11 +91,18 @@
                         <?php
                         session_start(); 
                         if(isset($_SESSION['message'])){
+<<<<<<< HEAD
                             print_r($_SESSION['major'],1);
                             echo $_SESSION['message'];
+=======
+
+			     echo $_SESSION['message'];
+
+>>>>>>> d548ce98dd680d9cacdb4d9d734bea3df74a55d6
                             unset($_SESSION['message']);
                         }
                         ?>
+			   </span>
                     </div>
                 </div>
 
