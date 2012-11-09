@@ -1,4 +1,5 @@
 <?php
+session_start();
 if($_session['isAdmin'] == 1){
 	$courseshort = $_POST['courseshortname'];
 	$courselong = $_POST['courselongname'];
