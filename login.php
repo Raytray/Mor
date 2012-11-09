@@ -86,12 +86,11 @@
                         </form>
 
                         
-			   <br /><div color="#FF0000">
+			   <br />
                         <?php } ?>
                         <?php
                         session_start(); 
                         if(isset($_SESSION['message'])){
-                            print_r($_SESSION['major'],1);
                             echo $_SESSION['message'];
                             unset($_SESSION['message']);
                         }
