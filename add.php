@@ -20,7 +20,7 @@ if($_SESSION['isAdmin'] == 1){
 	
 	mysql_query("INSERT into courses VALUES ('$courseshort', '$courselong', '$majors')") or die(mysql_error());
 
-    header("location:add.html");
+    header("location:addPage.php");
 }
 else{
 echo 'ERROR 403, you must be admin';
