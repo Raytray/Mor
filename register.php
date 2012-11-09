@@ -40,6 +40,7 @@ $password=$_POST['password'];
 
 mysql_query("INSERT into users VALUES ('$username', '$password', '$salt')") or die(mysql_error());
 
-echo "AWESOME WORKED!";
+             header("location:index.html");
+
 }
 ?>
