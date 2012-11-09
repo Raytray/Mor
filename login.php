@@ -70,7 +70,7 @@
                             <input type="submit" value="Change" />
                         </form>
 						<form action="declare.php" method="post"><br/>
-						Major: <select name="Major">
+						Major: <select name="major">
 						  <option value="default" selected="selected">Please select a major</option>
 						  <option value="BS Computer Science">B.S. Computer Science</option>
 						  <option value="BS Computer Engineering">Computer Engineering</option>
