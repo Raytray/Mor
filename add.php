@@ -7,13 +7,13 @@ if($_SESSION['isAdmin'] == 1){
 	$courselong = $_POST['courselongname'];
 	$majors = $_POST['majors'];
 
-	$courseshort = stripsslashes($courseshort);
+	$courseshort = stripslashes($courseshort);
 	$courseshort = $mysql_real_escape_string($courseshort);
 
-	$courselong = stripsslashes($courselong);
+	$courselong = stripslashes($courselong);
 	$courselong = $mysql_real_escape_string($courselong);
 
-	$majors = stripsslashes($majors);
+	$majors = stripslashes($majors);
 	$majors = $mysql_real_escape_string($majors);
 
 
