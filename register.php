@@ -1,23 +1,5 @@
 <?php
-mysql_connect('host', 'database', 'password') or die (mysql_error());
-mysql_select_db('database') or die (mysql_error());
-if(mysql_num_rows(mysql_query("SELECT * from users WHERE username='" . $_POST['username'] . "'")) == 1){
-echo "Sorry, this username is already taken!";
-}
-else{
-mysql_query("INSERT into users VALUES ('".$_POST['username']."', '".$_POST['password']."')") or die(mysql_error());
-}
-?>
-In the same way (using if/else and else if statements) we will need to check for a list of possible errors:
-Username too long
-Username too short
-Password too long
-Password too short
-Invalid characters in password
-Invalid characters in username
-This is a very simple, here is my code:
-<?php
-mysql_connect('host', 'database', 'password') or die (mysql_error());
+mysql_connect('localhost', 'database', 'password') or die (mysql_error());
 mysql_select_db('database') or die (mysql_error());
 if(mysql_num_rows(mysql_query("SELECT * from users WHERE username='" . $_POST['username'] . "'")) == 1){
 echo "Sorry, this username is already taken!";
@@ -44,6 +26,9 @@ else if(preg_match('/[^0-9A-Za-z]/',$_POST['password'])){
 echo "Invalid characters in password!";
 }
 else{
-mysql_query("INSERT into users VALUES ('".$_POST['username']."', '".$_POST['password']."')") or die(mysql_error());
+    $salt = mcrypt_create_iv(10, MCRYPT_DEV_RAND);//generate the salt
+    $password=crypt($password,$salt);//hash the password
+
+mysql_query("INSERT into users VALUES ('$username', '$password', $salt)") or die(mysql_error());
 }
 ?>
