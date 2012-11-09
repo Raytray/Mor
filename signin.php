@@ -17,6 +17,9 @@ if(mysql_num_rows(mysql_query("SELECT * from users WHERE email='" . $_POST['emai
         $_SESSION['name'] = $email;
         $_SESSION['loggedIn']=true;
         $_SESSION['message'] = "welcome back!";
+        $major = mysql_query("Select major FROM users WHERE email='$email' LIMIT 1");
+        
+        $_SESSION['major'] = $major;
         if(mysql_num_rows(mysql_query("Select * FROM users WHERE email='$email' and admin = '1'"))){
             $_SESSION['isAdmin']=1;
         }

@@ -1,16 +1,17 @@
 <?php
 session_start();
 ?>
-    
            <div id="sidebar">
                     <?php 
                     echo '<div align="left"><h3><a href= "#">';
-                    if(isset($_SESSION['name']))
+                    if(isset($_SESSION['name'])){
                         echo $_SESSION['name'];
+                    }
                     else
                         echo 'guest';
                     echo '</a></h2></div>';
 					if($_SESSION['isAdmin'])
+                    echo ' <a href = "#">', $_SESSION['major'], '</a>';
 					echo '<a href = "addPage.php"> (admin) Add Courses </a>';
                     ?>
 
