@@ -10,9 +10,8 @@ if(mysql_num_rows(mysql_query("SELECT * from users WHERE email='" . $_POST['emai
     $email = stripslashes($email);
     $password = stripslashes($password);
     $email=mysql_real_escape_string($email);
-    $salt = $email;
     $password=mysql_real_escape_string($password);
-    $password=crypt($password, $salt);
+    $password=crypt($password, $email);
         if(mysql_num_rows(mysql_query("Select * FROM users WHERE email='$email' and password='$password'"))==1){
             $_SESSION['name'] = $email;
             if(mysql_num_rows(mysql_query("Select * FROM users WHERE email='$email' and admin = '1'"))){
