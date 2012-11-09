@@ -69,6 +69,7 @@
                             Retype: <input type="password" name="retype-password"/><br />
                             <input type="submit" value="Change" />
                         </form>
+<<<<<<< HEAD
 						<form action="declare.php" method="post"><br/>
 						Major: <select name="Major">
 						  <option value="default" selected="selected">Please select a major</option>
@@ -78,13 +79,16 @@
 						</select>
                             <input type="submit" value="Declare" />
                         </form>
-                    <br /> <br />
+=======
+
+<br /> <br />
                         <form action="delete.php" method="post"><br/>
                             <b style="font-size:150%;">Delete Account</b><br/>
                             Password: <input type="password" name="password" value="Are you sure?" /><br/>
                             <input type="submit" value="Delete Account" />
                         </form>
 
+>>>>>>> 080e419f610f6e6d3b517aa4408beb5f4bab8556
                         
                         <?php } ?>
                         <?php
