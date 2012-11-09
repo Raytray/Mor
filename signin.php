@@ -28,5 +28,6 @@ if(mysql_num_rows(mysql_query("SELECT * from users WHERE email='" . $_POST['emai
 }
 else{
     echo 'DATABASE?';
+    header("location:login.php");
 }
 ?>
