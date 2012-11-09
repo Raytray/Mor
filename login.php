@@ -63,10 +63,10 @@
                           <input type="submit" value="Log Out" />
                         </form>
                         <form action="newPass.php" method="post"><br/>
-                          <input type="submit" value="Log Out" />
                             Old: <input type="password" name="Old Password"/><br/>
                             New: <input type="password" name="New Password"/><br/>
                             Retype: <input type="password" name="retype-password"/><br />
+                            <input type="submit" value="Change" />
                         </form>
                         
                         <?php } ?>
