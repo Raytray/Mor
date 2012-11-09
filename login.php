@@ -15,7 +15,7 @@ if(mysql_num_rows(mysql_query("SELECT * from users WHERE username='" . $_POST['u
     $password=crypt($password, $salt);
         if(mysql_num_rows(mysql_query("Select * FROM users WHERE username='$myusername' and password='$password'"))==1){
             $_SESSION['name'] = $username;
-            header("location:index.php");
+            header("location:index.html");
         }
         else{
             echo 'Wrong username or password!';
