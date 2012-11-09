@@ -86,7 +86,6 @@
                         </form>
 
                         
-			   <br /><div color="#FF0000">
                         <?php } ?>
                         <?php
                         session_start(); 
@@ -97,7 +96,6 @@
                             unset($_SESSION['message']);
                         }
                         ?>
-			   </span>
                     </div>
                 </div>
 
