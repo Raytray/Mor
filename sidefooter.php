@@ -10,9 +10,10 @@ session_start();
                     else
                         echo 'guest';
                     echo '</a></h2></div>';
-					if($_SESSION['isAdmin'])
+					if($_SESSION['isAdmin']==true){
                     echo ' <a href = "#">', $_SESSION['major'], '</a>';
-					echo '<a href = "addPage.php"> (admin) Add Courses </a>';
+                    echo '<a href = "addPage.php"> (admin) Add Courses </a>';
+                    }
                     ?>
 
 
