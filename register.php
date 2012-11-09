@@ -20,9 +20,7 @@ else if(strlen($_POST['password']) > 25){
 else if(strlen($_POST['password']) < 6){
     $_SESSION['message'] =  "Password is too short!";
 }
-//else if(preg_match('/[^0-9A-Za-z]/',$_POST['email'])){
-//echo "Invalid characters in email!";
-//}
+
 else if(preg_match('/[^0-9A-Za-z]/',$_POST['password'])){
     $_SESSION['message'] =  "Invalid characters in password!";
 }

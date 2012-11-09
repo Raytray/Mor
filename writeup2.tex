@@ -12,11 +12,11 @@ CS 4753 ECommerce Website Assignment 2\\
 
 \begin{doublespace}
 \subsection*{Overview}
-\indent For this assignment, we decided to continue with our website and build some functionality. We have implemented \emph{accounts}, complete with logging in, logging out, and registration functionalities. We also have password recovery, and change password functionality. We have also implemented an adminstrator account which can be designated on specific users to enable to additional permissions.\\
+\indent For this assignment, we decided to continue with our website and build some functionality. We have implemented \emph{accounts}, complete with logging in, logging out, and registration functionalities. We also have change password functionality and account removal functionality. We have also implemented an administrator flag which can be designated to specific users in order to enable additional permissions.\\
 
 \subsection*{Users}
-\indent We have implemented two additional user types. This is ontop of the guest view only access that unregistered users are automatically given. Users, will register with their emails, and upon registration will be sent a short email welcoming them to the service, as well as providing them with additional information about our service. However at this time, the email functionality on our website is blocked by most email services as spam. This is a limitation that has to be bypassed by either finding an alternative host, or by upgrading the webhost.\\
-\indent Users, once logged in, will see a dynamic page which no longer asks them to log in, and insteads ask them if they wish to log out. They will also find additional options such as account settings, which allows the user to change their password.\\
+\indent We have implemented two additional user types. This is on top of the guest view only access that unregistered users are automatically given. Users, will register with their emails, and upon registration will be sent a short email welcoming them to the service, as well as providing them with additional information about our service. However at this time, the email functionality on our website is blocked by most email services as spam. This is a limitation that has to be bypassed by either finding an alternative host, or by upgrading the webhost.\\
+\indent Users, once logged in, will see a dynamic page which no longer asks them to log in, and instead ask them if they wish to log out. They will also find additional options such as account settings, which allows the user to change their password.\\
 \indent Users are also able to save a specific major or minor that they have already declared in order to more quickly discover common minors in line with their majors. An interesting direction to take along this path is to enable users to save possibly majors and minors that they are interested in pursuing, and displaying the total minimum number of credits required to achieve both degrees.\\
 
 \subsection*{Functionalities}
@@ -34,7 +34,7 @@ CS 4753 ECommerce Website Assignment 2\\
 \end{enumerate}
 
 \subsection*{Security}
-\indent Once the login system was created, we immediately created a hash and salting functions in order to secure our user's passwords. We used the username as the salt, since this is able to prevent the use of a precalculated rainbow table as an attack, while being faster than computing a random string. The hash function is one way, and is cryptographically secure. We also santized inputs in every available textbox that interacted with the mysql database in order to prevent any injection attacks. We also decided to utilize sessions as opposed to cookies as cookies may be disabled for privacy concerns, and sessions, while less powerful, will cover a larger user base. A session, unlike a cookie has all the variable data stored on the serverside, which is harder for a malicious user to steal. We also did not want to have cookies that can last for a very long time, so we decided to use sessions which end on browser closure.
+\indent Once the login system was created, we immediately created a hash and salting functions in order to secure our user's passwords. We used the username as the salt, since this is able to prevent the use of a precalculated rainbow table as an attack, while being faster than computing a random string. The hash function is one way, and is cryptographically secure. We also sanitized inputs in every available textbox that interacted with the mysql database in order to prevent any injection attacks. We decided to utilize a session instead of a cookie. This is because, a session, unlike a cookie has all the variable data stored on the serverside, which is harder for a malicious user to steal. We also did not want to have cookies that can last for a very long time, so we decided to use sessions which end on browser closure.
 
 \subsection*{Method}
 \indent We were able to achieve all of this by utilizing the PHPmyAdmin tool provided by 000webhost, and the mysql service they provided for both our website and our testing. We also utilized several tutorials and documentation from php.net and some blogs to implement several of the features, including the login feature. However, we quickly adapted the design and altered the implementation in order to better suit our website.
@@ -48,6 +48,8 @@ CS 4753 ECommerce Website Assignment 2\\
 \\
 \\
 We look forward to demoing this to you in the near future.
+-Raymond Tang
+-Richard Li
 
 
 \end{doublespace}
