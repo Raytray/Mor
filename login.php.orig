@@ -86,7 +86,10 @@
                         </form>
 
                         
+<<<<<<< HEAD
 			   <br />
+=======
+>>>>>>> bce18596b42dde4f51cc2b337971d9bca0e9e9ff
                         <?php } ?>
                         <?php
                         session_start(); 

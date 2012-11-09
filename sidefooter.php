@@ -11,9 +11,9 @@ session_start();
                         echo 'guest';
                     echo '</a></h2></div>';
 					if($_SESSION['isAdmin']==true){
-                    echo ' <a href = "#">', $_SESSION['major'], '</a>';
                     echo '<a href = "addPage.php"> (admin) Add Courses </a>';
                     }
+                    echo ' <a href = "#">', $_SESSION['major'], '</a>';
                     ?>
 
 

@@ -18,7 +18,8 @@ if(mysql_num_rows(mysql_query("SELECT * from users WHERE email='" . $_POST['emai
         $_SESSION['loggedIn']=true;
         $_SESSION['message'] = "welcome back!";
         $major = mysql_query("Select major FROM users WHERE email='$email' LIMIT 1");
-        
+        $major = mysql_fetch_array($major, MYSQL_BOTH);
+        $major = $major[0]; 
         $_SESSION['major'] = $major;
         if(mysql_num_rows(mysql_query("Select * FROM users WHERE email='$email' and admin = '1'"))){
             $_SESSION['isAdmin']=1;
@@ -29,11 +30,11 @@ if(mysql_num_rows(mysql_query("SELECT * from users WHERE email='" . $_POST['emai
         }
     }
     else{
-        $_SESSION['message'] ='Wrong email or password!';
+        $_SESSION['message'] ='Wrong password!';
     }
 }
 else{
-    $_SESSION['message'] =  'Error. Please contact your local Richard Li or Raymond Tang';
+    $_SESSION['message'] =  'No such user found';
 }
 header("location:login.php");
 ?>
