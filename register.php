@@ -1,44 +1,52 @@
 <?php
 mysql_connect('mysql6.000webhost.com', 'a6519930_user', 'ecommerce2012') or die (mysql_error());
 mysql_select_db('a6519930_base') or die (mysql_error());
-if(mysql_num_rows(mysql_query("SELECT * from users WHERE username='" . $_POST['username'] . "'")) == 1){
-echo "Sorry, this username is already taken!";
+if(mysql_num_rows(mysql_query("SELECT * from users WHERE email='" . $_POST['email'] . "'")) == 1){
 }
 else if($_POST['password'] != $_POST['retype-password']){
+
 echo "The two passwords don't match!";
 }
-else if(strlen($_POST['username']) > 15){
-echo "Username is too long!";
+else if(strlen($_POST['email']) > 15){
+
+echo "Email is too long!";
 }
-else if(strlen($_POST['username']) < 6){
-echo "Username is too short!";
+else if(strlen($_POST['email']) < 6){
+
+echo "Email is too short!";
 }
 else if(strlen($_POST['password']) > 15){
+
 echo "Password is too long!";
 }
 else if(strlen($_POST['password']) < 6){
+
 echo "Password is too short!";
 }
-else if(preg_match('/[^0-9A-Za-z]/',$_POST['username'])){
-echo "Invalid characters in username!";
+else if(preg_match('/[^0-9A-Za-z]/',$_POST['email'])){
+
+echo "Invalid characters in email!";
 }
 else if(preg_match('/[^0-9A-Za-z]/',$_POST['password'])){
+
 echo "Invalid characters in password!";
 }
 else{
 
-$username=$_POST['username'];
+$email=$_POST['email'];
 $password=$_POST['password'];
 
-    $username = stripslashes($username);
+    $email = stripslashes($email);
     $password = stripslashes($password);
-    $username=mysql_real_escape_string($username);
+    $email=mysql_real_escape_string($email);
     $password=mysql_real_escape_string($password);
 
     $salt = "raymond"; //mcrypt_create_iv(10, (int) MCRYPT_DEV_URAND);//generate the salt
     $password=crypt($password,$salt);//hash the password
 
-mysql_query("INSERT into users VALUES ('$username', '$password', '$salt')") or die(mysql_error());
+mysql_query("INSERT into users VALUES ('$email', '$password', '$salt')") or die(mysql_error());
+
+echo mail('$email', 'WELCOME!', 'NO REALLY! WE WELCOME YOU!!!');
 
              header("location:login.html");
 
