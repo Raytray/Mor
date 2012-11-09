@@ -33,7 +33,7 @@
             </ul>
             <div id="page"> 
                 <div id="content" class="post">
-                    <h2 class="Title">Login</h2>
+                    <h2 class="Title">Add data</h2>
                     <div align="center">
 
                         <form action="add.php" method="post"><br />
