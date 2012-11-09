@@ -40,15 +40,19 @@ $password=$_POST['password'];
     $password = stripslashes($password);
     $email=mysql_real_escape_string($email);
     $password=mysql_real_escape_string($password);
-
-    $salt = "raymond"; //mcrypt_create_iv(10, (int) MCRYPT_DEV_URAND);//generate the salt
+    $fp = fopen('/dev/urandom', 'r');
+    $salt = fread($fp, 10);
+    fclose($fp);
+    base64_encode($salt);
     $password=crypt($password,$salt);//hash the password
 
-mysql_query("INSERT into users VALUES ('$email', '$password', '$salt')") or die(mysql_error());
+    mysql_query("INSERT into users VALUES ('$email', '$password', '$salt')") or die(mysql_error());
+    $_SESSION['name'] = $email;
+    $_SESSION['loggedIn']=true;
 
-echo mail('$email', 'WELCOME!', 'NO REALLY! WE WELCOME YOU!!!');
+    echo mail('$email', 'WELCOME!', 'NO REALLY! WE WELCOME YOU!!!');
 
-             header("location:login.html");
+    header("location:login.html");
 
 }
 ?>

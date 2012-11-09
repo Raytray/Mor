@@ -7,7 +7,9 @@ mysql_select_db('a6519930_base')
 $email=$_POST['email'];
 $password=$_POST['password'];
 if(mysql_num_rows(mysql_query("SELECT * from users WHERE email='" . $_POST['email'] . "'")) == 1){
-    $salt = 'raymond'; //mysql_query("SELECT salt FROM users WHERE email='$myemail' LIMIT 1");
+    $salt = mysql_query("SELECT salt FROM users WHERE email='$myemail' LIMIT 1");
+    $salt = mysql_fetch_array($result, MYSQL_BOTH);
+    $salt = $salt[0];//convoluted way of getting string from resource
     $email = stripslashes($email);
     $password = stripslashes($password);
     $email=mysql_real_escape_string($email);
@@ -15,7 +17,11 @@ if(mysql_num_rows(mysql_query("SELECT * from users WHERE email='" . $_POST['emai
     $password=crypt($password, $salt);
         if(mysql_num_rows(mysql_query("Select * FROM users WHERE email='$email' and password='$password'"))==1){
             $_SESSION['name'] = $email;
-	    
+            if(mysql_num_rows(mysql_query("Select * FROM users WHERE email='$email' and admin = 'true'"))){
+                $_SESSION['isAdmin']=true;
+            }
+            $_SESSION['loggedIn']=true;
+
             header("location:login.html");
         }
         else{
@@ -23,6 +29,6 @@ if(mysql_num_rows(mysql_query("SELECT * from users WHERE email='" . $_POST['emai
         }
 }
 else{
-	echo 'DATABASE?';
+    echo 'DATABASE?';
 }
 ?>
