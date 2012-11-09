@@ -1,6 +1,6 @@
 <?php
 session_start();
-mysql_connect('localhost', 'database', 'password')
+mysql_connect('localhost', 'a6519930_base', 'ecommerce2012')
     or die ("Could not connect to mysql because ".mysql_error());
 mysql_select_db('database')
     or die("Could not select database because ".mysql_error());
