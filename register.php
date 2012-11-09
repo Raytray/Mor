@@ -26,9 +26,17 @@ else if(preg_match('/[^0-9A-Za-z]/',$_POST['password'])){
 echo "Invalid characters in password!";
 }
 else{
-    $username = $_POST['username'];
+
+$username=$_POST['username'];
+$password=$_POST['password'];
+
+    $username = stripslashes($username);
+    $password = stripslashes($password);
+    $username=mysql_real_escape_string($username);
+    $password=mysql_real_escape_string($password);
+
     $salt = "raymond"; //mcrypt_create_iv(10, (int) MCRYPT_DEV_URAND);//generate the salt
-    $password=crypt($_POST['password'],$salt);//hash the password
+    $password=crypt($password,$salt);//hash the password
 
 mysql_query("INSERT into users VALUES ('$username', '$password', '$salt')") or die(mysql_error());
 

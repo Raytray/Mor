@@ -13,11 +13,12 @@ if(mysql_num_rows(mysql_query("SELECT * from users WHERE username='" . $_POST['u
     $username=mysql_real_escape_string($username);
     $password=mysql_real_escape_string($password);
     $password=crypt($password, $salt);
-        if(mysql_num_rows(mysql_query("Select * FROM users WHERE username='$myusername' and password='$password'"))==1){
+        if(mysql_num_rows(mysql_query("Select * FROM users WHERE username='$username' and password='$password'"))==1){
             $_SESSION['name'] = $username;
             header("location:index.html");
         }
         else{
+	echo $salt, $username, $password;
             echo 'Wrong username or password!';
         }
 }
