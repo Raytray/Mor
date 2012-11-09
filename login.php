@@ -21,4 +21,7 @@ if(mysql_num_rows(mysql_query("SELECT * from users WHERE username='" . $_POST['u
             echo 'Wrong username or password!';
         }
 }
+else{
+	echo 'DATABASE?';
+}
 ?>
