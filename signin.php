@@ -13,23 +13,24 @@ if(mysql_num_rows(mysql_query("SELECT * from users WHERE email='" . $_POST['emai
     $salt = $email;
     $password=mysql_real_escape_string($password);
     $password=crypt($password, $salt);
-        if(mysql_num_rows(mysql_query("Select * FROM users WHERE email='$email' and password='$password'"))==1){
-            $_SESSION['name'] = $email;
-            if(mysql_num_rows(mysql_query("Select * FROM users WHERE email='$email' and admin = '1'"))){
-                $_SESSION['isAdmin']=1;
-            }
-	    else{
-	    $_SESSION['isAdmin']=0;
-            $_SESSION['loggedIn']=true;
-
-	    header("location:login.php");
+    if(mysql_num_rows(mysql_query("Select * FROM users WHERE email='$email' and password='$password'"))==1){
+        $_SESSION['name'] = $email;
+        $_SESSION['loggedIn']=true;
+        $_SESSION['message'] = "welcome back!";
+        if(mysql_num_rows(mysql_query("Select * FROM users WHERE email='$email' and admin = '1'"))){
+            $_SESSION['isAdmin']=1;
         }
         else{
-            echo 'Wrong email or password!';
+            $_SESSION['isAdmin']=0;
+        
         }
+    }
+    else{
+        $_SESSION['message'] ='Wrong email or password!';
+    }
 }
 else{
-    header("location:login.php");
-    echo 'Error. Please contact your local Richard Li or Raymond Tang';
+    $_SESSION['message'] =  'Error. Please contact your local Richard Li or Raymond Tang';
 }
+header("location:login.php");
 ?>
