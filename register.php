@@ -34,12 +34,12 @@ else{
     $salt = $email;
     $password=crypt($password,$salt);//hash the password
 
-    mysql_query("INSERT into users VALUES ('$email', '$password', '$salt')") or die(mysql_error());
+    mysql_query("INSERT into users VALUES ('$email', '$password', '$salt', 'admin')") or die(mysql_error());
     $_SESSION['name'] = $email;
     $_SESSION['loggedIn']=true;
 
     mail('$email', 'WELCOME!', 'NO REALLY! WE WELCOME YOU!!!');
 
-    header("location:login.html");
+    header("location:login.php");
 }
 ?>
