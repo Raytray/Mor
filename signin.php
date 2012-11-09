@@ -10,8 +10,8 @@ if(mysql_num_rows(mysql_query("SELECT * from users WHERE email='" . $_POST['emai
     $email = stripslashes($email);
     $password = stripslashes($password);
     $email=mysql_real_escape_string($email);
-    $salt = $email;
     $password=mysql_real_escape_string($password);
+<<<<<<< HEAD
     $password=crypt($password, $salt);
     if(mysql_num_rows(mysql_query("Select * FROM users WHERE email='$email' and password='$password'"))==1){
         $_SESSION['name'] = $email;
@@ -19,6 +19,19 @@ if(mysql_num_rows(mysql_query("SELECT * from users WHERE email='" . $_POST['emai
         $_SESSION['message'] = "welcome back!";
         if(mysql_num_rows(mysql_query("Select * FROM users WHERE email='$email' and admin = '1'"))){
             $_SESSION['isAdmin']=1;
+=======
+    $password=crypt($password, $email);
+        if(mysql_num_rows(mysql_query("Select * FROM users WHERE email='$email' and password='$password'"))==1){
+            $_SESSION['name'] = $email;
+            if(mysql_num_rows(mysql_query("Select * FROM users WHERE email='$email' and admin = '1'"))){
+                $_SESSION['isAdmin']=1;
+            }
+	    else{
+	    $_SESSION['isAdmin']=0;
+            $_SESSION['loggedIn']=true;
+
+	    header("location:login.php");
+>>>>>>> 0107468e6b8414761cd3ba4f5e6df61d5c03a798
         }
         else{
             $_SESSION['isAdmin']=0;

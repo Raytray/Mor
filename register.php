@@ -32,10 +32,9 @@ else{
     $password = stripslashes($password);
     $email=mysql_real_escape_string($email);
     $password=mysql_real_escape_string($password);
-    $salt = $email;
-    $password=crypt($password,$salt);//hash the password
+    $password=crypt($password,$email);//hash the password
 
-    mysql_query("INSERT into users VALUES ('$email', '$password', '$salt', 'admin')") or die(mysql_error());
+    mysql_query("INSERT into users VALUES ('$email', '$password', 'undeclared' '0')") or die(mysql_error());
     $_SESSION['name'] = $email;
     $_SESSION['loggedIn']=true;
     $_SESSION['message'] = "Thanks for registring!";
