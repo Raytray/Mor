@@ -9,7 +9,7 @@ class major
 $myMajor = $_GET["myMajor"];
 $majors = array();
 
-echo "RICH";
+echo $myMajor;
 
 mysql_connect('mysql6.000webhost.com', 'a6519930_user', 'ecommerce2012')
 or die ("Could not connect to mysql because ".mysql_error());
@@ -26,40 +26,39 @@ while($row = mysql_fetch_array($result)){
       break;
     }
   }
-    if(found){
+    if($found){
         foreach($majorList as $i){
             if($i!=myMajor){
-                if(!array_key_exists($i, $majors){//if major isnt in the array, add it.
+                if(!array_key_exists($i, $majors)){//if major isnt in the array, add it.
                     $temp = new major();
-                    $temp.name = $i;
+                    $temp -> name = $i;
                     $majors[$i]=$temp;
                 }
-                $majors[$i].coursesID[]=$row['id'];
-                $majors[$i].coursesName[]=$row['name'];
+                $majors[$i] -> courseID[]=$row['id'];
+                $majors[$i] -> courseName[]=$row['name'];
             }
         }
     }
 }
-}
-    echo "'<h3>' . $majors[$i].name . '</h3>'
+
+
+
+foreach($majorList as $i){
+$blah = $majors[$i]->name;
+    echo "<h3> $blah </h3>
       <table border='1'>
       <tr>
       <th>Course ID</th>
       <th>Course Name</th>
       </tr>";
-
-foreach($majorList as $i){
-for($j = 0; $j < sizeof($majors[$i].courses[]); $j++)
+for($j = 0; $j < sizeof($majors[$i] -> courseName); $j++)
 {
 echo "<tr>";
-echo "<td>" . $majors[$i].coursesID[$j] . "</td>";
-echo "<td>" . $majors[$i].courseName[$j] . "</td>";
+echo "<td>" . $majors[$i] -> courseID[$j] . "</td>";
+echo "<td>" . $majors[$i] -> courseName[$j] . "</td>";
 echo "</tr>";
 }
 }
 echo "</table>";
-
-
-}
 
 ?>

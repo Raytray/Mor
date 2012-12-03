@@ -7,7 +7,7 @@
    <!-- Using external style sheet -->
    <title>Looking for another Major or possible Minors?</title>
    <!-- Includes the external Javascript -->
-   <script src="Scripts/slideImg.js" type="text/javascript"></script>
+<!--   <script src="Scripts/slideImg.js" type="text/javascript"></script> -->
    <script src="Scripts/about.js" type="text/javascript"></script>
    <script src="Scripts/login.js" type="text/javascript"></script>
    <!--    <script src="Scripts/select.js" type="text/javascript"></script> -->

@@ -17,7 +17,7 @@ function findMajor(str)
     {
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
 	{
-            document.getElementByID("stuffToReplaceWithAJAX").innerHTML=xmlhttp.responseText;
+            document.getElementById("stuffToReplaceWithAJAX").innerHTML=xmlhttp.responseText;
 	}
     }
     xmlhttp.open("GET", "majorMatch.php?myMajor="+str,true);
