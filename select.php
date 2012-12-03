@@ -11,32 +11,7 @@
    <script src="Scripts/about.js" type="text/javascript"></script>
    <script src="Scripts/login.js" type="text/javascript"></script>
    <!--    <script src="Scripts/select.js" type="text/javascript"></script> -->
-   <script>
-   function findMajor(str)
-{
-  if (str=="")
-    {
-      document.getElementById("stuffToReplaceWithAJAX").innerHTML="";
-      return;
-    }
-  if (window.XMLHttpRequest)
-    {
-      xmlhttp=new XMLHttpRequest();
-    }
-  else
-    { // IE6 or IE5
-      document.getElementById("stuffToReplaceWithAJAX").innerHTML="Please download <a href='http://www.mozilla.org/en-US/firefox/new/'>Firefox</a> or <a href='https://www.google.com/intl/en/chrome/browser/'>Chrome</a> and try again.";
-      xmlhttp.onreadystatechange=function()
-      {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	  {
-            document.getElementByID("stuffToRepalceWithAJAX").innerHTML=xmlhttp.responseText;
-	  }
-      }
-      xmlhttp.open("GET", "majorMatch.php?myMajor="+str,true);
-      xmlhttp.send();
-    }
-  </script>
+   <script src="Scripts/select2.js" type="text/javascript"></script>
 
 
   </head>
@@ -63,6 +38,7 @@
   <div id="page"> 
   <div id="content" class="post">
   <h2 class="Title">Course Browser</h2>
+
   <form>
   <select name="Major" onchange="findMajor(this.value)">
   <option value="default" selected="selected">Please select a major</option>
@@ -70,10 +46,9 @@
   <option value="Computer Engineering">Computer Engineering</option>
   <option value="Electrical Engineering">Electrical Engineering</option>
   </select>
-
   </form>
 
-  <div class="stuffToReplaceWithAJAX"><b>Once you have chosen a course above, the space below will be populated with majors sorted by the number of overlapping courses in relation to the major you have selected.</b></div>
+  <div id="stuffToReplaceWithAJAX"><b>Once you have chosen a course above, the space below will be populated with majors sorted by the number of overlapping courses in relation to the major you have selected.</b></div>
 
 
   <!-- Javascript hard coded select. Deprecated.
@@ -96,7 +71,7 @@
   </div>
   </div>
 
-  <?php include "sidefooter.php"; ?>
+<!--  <?php include "sidefooter.php"; ?> -->
   </div>
   </body>
   <!-- end #footer -->
