@@ -24,7 +24,7 @@
       xmlhttp=new XMLHttpRequest();
       }
       else
-      { //IE6 or IE5
+      { // IE6 or IE5
       document.getElementById("stuffToReplaceWithAJAX").innerHTML="Please download <a href='http://www.mozilla.org/en-US/firefox/new/'>Firefox</a> or <a href='https://www.google.com/intl/en/chrome/browser/'>Chrome</a> and try again.";
       xmlhttp.onreadystatechange=function()
       {
@@ -63,15 +63,15 @@
       <div id="page"> 
 	<div id="content" class="post">
 	  <h2 class="Title">Course Browser</h2>
-<form>
-	  <select name="Major" onchange="declared(this.value)">
-	    <option value="default" selected="selected">Please select a major</option>
-	    <option value="Computer Science">B.S. Computer Science</option>
-	    <option value="Computer Engineering">Computer Engineering</option>
-	    <option value="Electrical Engineering">Electrical Engineering</option>
-	  </select>
+	  <form>
+	    <select name="Major" onchange="declared(this.value)">
+	      <option value="default" selected="selected">Please select a major</option>
+	      <option value="Computer Science">B.S. Computer Science</option>
+	      <option value="Computer Engineering">Computer Engineering</option>
+	      <option value="Electrical Engineering">Electrical Engineering</option>
+	    </select>
 
-</form>
+	  </form>
 
 	  <div class="stuffToReplaceWithAJAX"><b>Once you have chosen a course above, the space below will be populated with majors sorted by the number of overlapping courses in relation to the major you have selected.</b></div>
 
