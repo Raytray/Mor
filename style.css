@@ -70,7 +70,7 @@ a:visited{
 
 #header {
 	width: 940px;
-	height: 130px;
+	height: 100px;
 	margin: 0 auto;
 }
 
@@ -78,7 +78,7 @@ a:visited{
 
 #logo {
 	width: 960px;
-	height: 150px;
+	height: 100px;
 	margin: 0px auto 30px auto;
 	color: #000000;
 }
@@ -89,7 +89,7 @@ a:visited{
 }*/
 
 #logo h1 {
-	line-height: 150px;
+	line-height: 90px;
 	letter-spacing: 3px;
 	text-align: left;
 	text-transform: lowercase;

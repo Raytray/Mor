@@ -4,15 +4,43 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=us-ascii" />
     <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
-	<!-- Using external style sheet -->
+    <!-- Using external style sheet -->
     <title>Looking for another Major or possible Minors?</title>
-	<!-- Includes the external Javascript -->
+    <!-- Includes the external Javascript -->
     <script src="Scripts/slideImg.js" type="text/javascript"></script>
-	<script src="Scripts/about.js" type="text/javascript"></script>
-	<script src="Scripts/login.js" type="text/javascript"></script>
-	<script src="Scripts/select.js" type="text/javascript"></script>
-	</head>
-<!-- Loads the slideshow script -->
+    <script src="Scripts/about.js" type="text/javascript"></script>
+    <script src="Scripts/login.js" type="text/javascript"></script>
+    <!--    <script src="Scripts/select.js" type="text/javascript"></script> -->
+    <script>
+      function findMajor(str)
+      {
+      if (str=="")
+      {
+      document.getElementById("stuffToReplaceWithAJAX").innerHTML="";
+      return;
+      }
+      if (window.XMLHttpRequest)
+      {
+      xmlhttp=new XMLHttpRequest();
+      }
+      else
+      { // IE6 or IE5
+      document.getElementById("stuffToReplaceWithAJAX").innerHTML="Please download <a href='http://www.mozilla.org/en-US/firefox/new/'>Firefox</a> or <a href='https://www.google.com/intl/en/chrome/browser/'>Chrome</a> and try again.";
+      xmlhttp.onreadystatechange=function()
+      {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200)
+      {
+      document.getElementByID("stuffToRepalceWithAJAX").innerHTML=xmlhttp.responseText;
+      }
+      }
+      xmlhttp.open("GET", "majorMatch.php?myMajor="+str,true);
+      xmlhttp.send();
+      }
+    </script>
+
+  
+  </head>
+  <!-- Loads the slideshow script -->
   <body onLoad="switchImage('slideImg'); imagerollover()">
     <div id="wrapper">
       <div id="header">
@@ -32,28 +60,44 @@
 	<li><a href="login.php">Login</a></li>
 	<li class="last"><a href="about.php">About</a></li>
       </ul>
-	  <div id="page"> 
+      <div id="page"> 
 	<div id="content" class="post">
 	  <h2 class="Title">Course Browser</h2>
-	<select name="Major" onchange="changeMajor(this.value)">
-	  <option value="default" selected="selected">Please select a major</option>
-	  <option value="BS Computer Science">B.S. Computer Science</option>
-	  <option value="BS Computer Engineering">Computer Engineering</option>
-	  <option value="BS Electrical Engineering">Electrical Engineering</option>
-	</select>
-  
-  <div class="title">
-    <table id="Majors">
-      <tbody>
-	<tr><td colspan="3"><h3>Overlapping Courses</h3></td>
-	<tr><td>Course Number</td><td>Course Name</td><td>Major</td></tr>
-	</tbody>
-      </table>
-	</div>
+	  <form>
+	    <select name="Major" onchange="declared(this.value)">
+	      <option value="default" selected="selected">Please select a major</option>
+	      <option value="Computer Science">B.S. Computer Science</option>
+	      <option value="Computer Engineering">Computer Engineering</option>
+	      <option value="Electrical Engineering">Electrical Engineering</option>
+	    </select>
+
+	  </form>
+
+	  <div class="stuffToReplaceWithAJAX"><b>Once you have chosen a course above, the space below will be populated with majors sorted by the number of overlapping courses in relation to the major you have selected.</b></div>
+
+
+<!-- Javascript hard coded select. Deprecated.
+	  <select name="Major" onchange="changeMajor(this.value)">
+	    <option value="default" selected="selected">Please select a major</option>
+	    <option value="BS Computer Science">B.S. Computer Science</option>
+	    <option value="BS Computer Engineering">Computer Engineering</option>
+	    <option value="BS Electrical Engineering">Electrical Engineering</option>
+	  </select>
+
+	    <div class="title">
+	      <table id="Majors">
+		<tbody>
+		  <tr><td colspan="3"><h3>Overlapping Courses</h3></td>
+		  <tr><td>Course Number</td><td>Course Name</td><td>Major</td></tr>
+		</tbody>
+	      </table>
+	    </div>
+-->
+	  </div>
 	</div>
 	
 	<?php include "sidefooter.php"; ?>
-    </div>
+      </div>
   </body>
   <!-- end #footer -->
 </html>
