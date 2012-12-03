@@ -64,7 +64,7 @@
   <div id="content" class="post">
   <h2 class="Title">Course Browser</h2>
   <form>
-  <select name="Major" onchange="declared(this.value)">
+  <select name="Major" onchange="findMajor(this.value)">
   <option value="default" selected="selected">Please select a major</option>
   <option value="Computer Science">B.S. Computer Science</option>
   <option value="Computer Engineering">Computer Engineering</option>
