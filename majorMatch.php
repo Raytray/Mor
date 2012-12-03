@@ -31,8 +31,8 @@ while($row = mysql_fetch_array($result)){
                     $temp.name = $i;
                     $majors[$i]=$temp;
                 }
-                $majors[$i].courses[]=$row['courseID'];
-                $majors[$i].courses[]=$row['courseName'];
+                $majors[$i].coursesID[]=$row['id'];
+                $majors[$i].coursesName[]=$row['name'];
             }
         }
     }
