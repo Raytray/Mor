@@ -36,5 +36,23 @@ while($row = mysql_fetch_array($result)){
             }
         }
     }
+echo "<h3>" . $majors[$i].name . "</hr>"
+<table border='1'>
+<tr>
+<th>Course ID</th>
+<th>Course Name</th>
+</tr>";
+foreach($majorList as $i){
+for($j = 0; $j < sizeof($majors[$i].courses[]); $j++)
+{
+echo "<tr>";
+echo "<td>" . $majors[$i].coursesID[$j] . "</td>";
+echo "<td>" . $majors[$i].courseName[$j] . "</td>";
+echo "</tr>";
+}
+}
+echo "</table>";
+
+
 }
 ?>
