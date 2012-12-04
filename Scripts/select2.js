@@ -23,3 +23,15 @@ function findMajor(str)
     xmlhttp.open("GET", "majorMatch.php?myMajor="+str,true);
     xmlhttp.send();
 }
+
+function toggleview(element1) {
+
+    element1 = document.getElementById(element1);
+
+    if (element1.style.display == 'block' || element1.style.display == '')
+	element1.style.display = 'none';
+    else
+	element1.style.display = 'block';
+
+    return;
+}

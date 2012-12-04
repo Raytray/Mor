@@ -12,19 +12,6 @@
     <script src="Scripts/login.js" type="text/javascript"></script>
     <!--    <script src="Scripts/select.js" type="text/javascript"></script> -->
     <script src="Scripts/select2.js" type="text/javascript"></script>
-    <script type="text/javascript">
-      function toggleview(element1) {
-
-      element1 = document.getElementById(element1);
-
-      if (element1.style.display == 'block' || element1.style.display == '')
-      element1.style.display = 'none';
-      else
-      element1.style.display = 'block';
-
-      return;
-      }
-    </script>
   </head>
   <!-- Loads the slideshow script -->
 <?php

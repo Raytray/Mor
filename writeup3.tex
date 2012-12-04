@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\begin{document}
+\begin{singlespace}
+\noindent Raymond Tang\\
+rt2ck\\
+Richard Li\\
+yl4tc\\
+CS 4753 ECommerce Website Assignment 3
+\end{singlespace}
+
+\begin{doublespace}
+\subsection*{Overview}
+\indent For this assignment, we sought to create the end to end functionality. We implemented the core course matching functionality under \emph{select.php}. This was done with AJAX and will sort results. It will also only display other majors at first, and hide the resulting data. If the user is logged in, it also automatically loads results based on the user's declared major. This is because we felt this information to be most valuable to a registered user.\\
+
+\subsection*{Decision process}
+\indent We opted for an AJAX implementation call from PHP because it would not require the user to reload the page in order to view the data. The code for this is available in \emph{majorMatch.php} It also allowed us to load the page much more quickly because not all the information is presented to the user and is only loaded as needed. We also chose to sort the more relevant information to the top in order to provide the user with a better and clearer match. In addition to this, we obscured the actual listed courses for each match in order to reduce the amount of information presented at one time to the user. To do this, we utilized javascript and html. The code for this is found in \emph{Scripts/select2.js}. We placed all the javascript into separate files in order to have cleaner and more modular source code.\\
+
+\subsection*{Issues}
+\indent We ran into minor issues when implementing AJAX, Javascript hiding, Sorting, and the core functionality. However, we were able to overcome all of these issues. We felt that in the future, we would elect to use a framework or bootstrap in order to abstract away from minor errors that could have been otherwise more easily avoided. We also wrote this with emacs and vim which did not give us any feedback in terms of minor syntax errors. An IDE would have been helpful for this. However we were able to sufficiently overcome these errors.\\
+
+\end{doublespace}
+\end{document}
