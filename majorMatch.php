@@ -25,37 +25,37 @@ while($row = mysql_fetch_array($result)){
       break;
     }
   }
-    if($found){
+  if($found){
 
-        foreach($majorList as $i){
-            if($i!=$myMajor){
-                if(!array_key_exists($i, $majors)){//if major isnt in the array, add it.
-                    $temp = new major();
-                    $temp -> name = $i;
-                    $majors[$i]=$temp;
-                }
-                $majors[$i] -> courseID[]=$row['id'];
-                $majors[$i] -> courseName[]=$row['name'];
-            }
-        }
+    foreach($majorList as $i){
+      if($i!=$myMajor){
+	if(!array_key_exists($i, $majors)){//if major isnt in the array, add it.
+	  $temp = new major();
+	  $temp -> name = $i;
+	  $majors[$i]=$temp;
+	}
+	$majors[$i] -> courseID[]=$row['id'];
+	$majors[$i] -> courseName[]=$row['name'];
+      }
     }
+  }
 }
 function cmp($a, $b)
 {
-return $a->count == $b->count ? 0 : ( $a->count > $b->count ) ? -1 : 1;
+  return $a->count == $b->count ? 0 : ( $a->count > $b->count ) ? -1 : 1;
 }
 
 foreach($majors as &$i){
-$i -> count = sizeof($i -> courseName);
+  $i -> count = sizeof($i -> courseName);
 }
 
 usort($majors, "cmp");
 
 foreach($majors as &$i){
-$blah = $i->name;
-$counted = $i->count;
-$blah2= '"' . $blah . '"';
-    echo "<a href='#' onclick='toggleview($blah2)'> <h3> $blah , $counted matching</h3></a>
+  $blah = $i->name;
+  $counted = $i->count;
+  $blah2= '"' . $blah . '"';
+  echo "<a href='#' onclick='toggleview($blah2)'> <h3> $blah , $counted matching</h3></a>
     <div style='display:none;' id=$blah2>
       <table border='1'>
       <tr>
@@ -63,16 +63,16 @@ $blah2= '"' . $blah . '"';
       <th>Course Name</th>
       </tr>";
 
-for($j = 0; $j < sizeof($i -> courseName); $j++)
-{
-echo "<tr>";
-echo "<td>" . $i -> courseID[$j] . "</td>";
-echo "<td>" . $i -> courseName[$j] . "</td>";
-echo "</tr>";
-}
-echo "</table>";	
-echo "</div>";
-echo "<br />";
+  for($j = 0; $j < sizeof($i -> courseName); $j++)
+    {
+      echo "<tr>";
+      echo "<td>" . $i -> courseID[$j] . "</td>";
+      echo "<td>" . $i -> courseName[$j] . "</td>";
+      echo "</tr>";
+    }
+  echo "</table>";	
+  echo "</div>";
+  echo "<br />";
 }
 
 ?>
