@@ -71,11 +71,13 @@
                         </form>
 						<form action="declare.php" method="post"><br/>
 						Major: <select name="major">
-						  <option value="default" selected="selected">Please select a major</option>
-						  <option value="BS Computer Science">B.S. Computer Science</option>
-						  <option value="BS Computer Engineering">Computer Engineering</option>
-						  <option value="BS Electrical Engineering">Electrical Engineering</option>
-						</select>
+	      <option value="default" selected="selected">Please select a major</option>
+	      <option value="Aerospace Engineering">Aerospace Engineering</option>
+	      <option value="Computer Science">Computer Science</option>
+	      <option value="Computer Engineering">Computer Engineering</option>
+	      <option value="Electrical Engineering">Electrical Engineering</option>
+	      <option value="Mechanical Engineering">Mechanical Engineering</option>
+	    </select>
                             <input type="submit" value="Declare" />
                         </form>
                     <br /> <br />

@@ -27,7 +27,21 @@
     </script>
   </head>
   <!-- Loads the slideshow script -->
-  <body onLoad="switchImage('slideImg'); imagerollover()">
+<?php
+session_start();
+if($_SESSION['major']!=true){
+?>
+  <body>
+<?php
+}
+else{
+$blah = "<body onLoad=" . "'" . "findMajor(";
+$blah2 = '"' . $_SESSION['major'] . '"';
+$blah3 = ")" . "'" . ">";
+$blah4 = $blah . $blah2 . $blah3;
+echo $blah4;
+}
+?>
     <div id="wrapper">
       <div id="header">
 	<div id="logo">
@@ -53,15 +67,16 @@
 	  <form>
 	    <select name="Major" onchange="findMajor(this.value)">
 	      <option value="default" selected="selected">Please select a major</option>
-	      <option value="Computer Science">B.S. Computer Science</option>
+	      <option value="Aerospace Engineering">Aerospace Engineering</option>
+	      <option value="Computer Science">Computer Science</option>
 	      <option value="Computer Engineering">Computer Engineering</option>
 	      <option value="Electrical Engineering">Electrical Engineering</option>
+	      <option value="Mechanical Engineering">Mechanical Engineering</option>
 	    </select>
 	  </form>
 	  <div align="center">
 	    <hr />
 	    <div id="stuffToReplaceWithAJAX"><b>Once you have chosen a course above, the space below will be populated with majors sorted by the number of overlapping courses in relation to the major you have selected.</b></div>
-
 
 	    <!-- Javascript hard coded select. Deprecated.
 		 <select name="Major" onchange="changeMajor(this.value)">
