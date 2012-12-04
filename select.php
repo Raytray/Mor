@@ -47,7 +47,8 @@
   <option value="Electrical Engineering">Electrical Engineering</option>
   </select>
   </form>
-
+<div align="center">
+<hr />
   <div id="stuffToReplaceWithAJAX"><b>Once you have chosen a course above, the space below will be populated with majors sorted by the number of overlapping courses in relation to the major you have selected.</b></div>
 
 
@@ -71,8 +72,9 @@
   </div>
   </div>
 
-<!--  <?php include "sidefooter.php"; ?> -->
+  <?php include "sidefooter.php"; ?> 
   </div>
+</div>
   </body>
   <!-- end #footer -->
   </html>
