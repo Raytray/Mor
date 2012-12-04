@@ -42,12 +42,16 @@ while($row = mysql_fetch_array($result)){
 
 foreach($majors as &$i){
 $blah = $i->name;
-    echo "<h3> $blah </h3>
+$count = sizeof($i -> courseName);
+$blah2= '"' . $blah . '"';
+    echo "<a href='#' onclick='toggleview($blah2)'> <h3> $blah , $count matching</h3></a>
+    <div style='display:none;' id=$blah2>
       <table border='1'>
       <tr>
       <th>Course ID</th>
       <th>Course Name</th>
       </tr>";
+
 for($j = 0; $j < sizeof($i -> courseName); $j++)
 {
 echo "<tr>";
@@ -56,8 +60,8 @@ echo "<td>" . $i -> courseName[$j] . "</td>";
 echo "</tr>";
 }
 echo "</table>";	
+echo "</div>";
 echo "<br />";
 }
-
 
 ?>
