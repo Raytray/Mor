@@ -5,6 +5,7 @@ class major
   public $name;
   public $courseID = array();
   public $courseName = array();
+  public $count = 0;
 }
 $myMajor = $_GET["myMajor"];
 $majors = array();
@@ -39,12 +40,22 @@ while($row = mysql_fetch_array($result)){
         }
     }
 }
+function cmp($a, $b)
+{
+return $a->count == $b->count ? 0 : ( $a->count > $b->count ) ? -1 : 1;
+}
+
+foreach($majors as &$i){
+$i -> count = sizeof($i -> courseName);
+}
+
+usort($majors, "cmp");
 
 foreach($majors as &$i){
 $blah = $i->name;
-$count = sizeof($i -> courseName);
+$counted = $i->count;
 $blah2= '"' . $blah . '"';
-    echo "<a href='#' onclick='toggleview($blah2)'> <h3> $blah , $count matching</h3></a>
+    echo "<a href='#' onclick='toggleview($blah2)'> <h3> $blah , $counted matching</h3></a>
     <div style='display:none;' id=$blah2>
       <table border='1'>
       <tr>
